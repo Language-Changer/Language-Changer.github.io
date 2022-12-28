@@ -34,12 +34,6 @@
                 </div>
             </center>
         </nav>
-        <section style="display: none;" id="New_Year">
-            <center>
-                <p>今天是元旦</p>
-                <p>新的一年是不是该做点计划?</p>
-            </center>
-        </section>
         <footer style="background: #AAAAAA;font-size:1px;">
             <center>
                 <p style="color: #AAAAAA;">我的<a href="https://github.com/Language-Changer/" style="color: #AAAAAA;">主页</a></p>
@@ -102,14 +96,6 @@
                 var ans = much_date(y,mo,d) * 86400;
                 ans += 3600 * h + 60 * m + s;
                 return ans;
-            }
-            function New_Year()
-            {
-                var now = new Date();
-                if(!(now.getMonth()) && now.getDate() == 1)
-                {
-                    document.getElementById("New_Year").style.display = block;
-                }
             }
         </script>
     </body>
