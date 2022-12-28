@@ -28,16 +28,18 @@
             <center>
                 <div class="timee">
                     <p id="date+"></p>
-                    <p id="date-"></p>
+                    <p id="second+"></p>
                 </div>
                 <div class="timee">
-                    <p id="second"></p>
+                    <p id="date-"></p>
+                    <p id="second-"></p>
                 </div>
             </center>
         </nav>
         <footer style="background:#AAAAAA;font-size:1px;">
             <center>
                 <p style="color:#AAAAAA;">我的<a href="https://github.com/Language-Changer/" style="color:#AAAAAA;">主页</a></p>
+                <p><a href="./news/"><s>印钱</s>胤乾日报</a></p>
                 <p>
                     <a href="https://jwy2008.github.io/">帮朋友宣传一下</a>
                     &nbsp;
@@ -68,8 +70,10 @@
                 document.getElementById("date+").innerHTML="今天是"+year+"年的第"+much_date(year,month,date)+"天";
                 document.getElementById("date-").innerHTML="还有"+much_date_else(year,month,date)+"天会来到新的一年";
                 //second
-                document.getElementById("second").innerHTML="不出意外的话现在是"+year+"年的第"+much_second(year,month,date,hour,minute,second)+"秒";
-                setTimeout(show_time,1000);//定时器一直调用show()函数
+                document.getElementById("second+").innerHTML="不出意外的话也是"+year+"年的第"+much_second(year,month,date,hour,minute,second)+"秒";
+                document.getElementById("second-").innerHTML="对,"+year+"年还剩"+much_second_else(year,month,date,hour,minute,second)+"秒";
+                //保持刷新
+                setTimeout(show_time,1000);
                 return 0;
             }
             function leap_year(when)
@@ -97,6 +101,12 @@
             {
                 var ans = much_date(y,mo,d) * 86400;
                 ans += 3600 * h + 60 * m + s;
+                return ans;
+            }
+            function much_second_else(y,mo,d,h,m,s)
+            {
+                var ans = 365 * 86400 + leap_year(y) * 86400;
+                ans -= much_second(y,mo,d,h,m,s);
                 return ans;
             }
         </script>
