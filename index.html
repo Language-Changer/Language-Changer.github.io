@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="CN-zh">
+    <head>
+        <title>计数器</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="html.css" />
+    </head>
+    <body>
+        <center>
+            <h1 id="demo">&nbsp;</h1>
+            <hr>
+            <button onclick="show()">here!</button>
+            <br>
+            <button onclick="showall()">Finish!</button>
+            <button onclick="re()">Reset!</button>
+        </center>
+        <!--
+        <div class="material-symbols-outlined">
+            <span class="delete">delete</span>
+            <span class="htmll">html</span>
+        </div>
+        <style>
+            .delete {
+              font-variation-settings:
+              'FILL' 1,
+              'wght' 400,
+              'GRAD' 0,
+              'opsz' 48
+            }
+            .htmll {
+                font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 48
+            }
+        </style>
+        -->
+        <hr>
+        <iframe src="./h.html" frameborder="0" style="height: 500px;width: 100%;"></iframe>
+        <script>
+            var i=0;
+            function show()
+            {
+                i += 1;
+                console.log("Hello world! * ",i);
+            }
+
+            function showall()
+            {
+                document.getElementById("demo").innerHTML = i;
+            }
+
+            function re()
+            {
+                location.reload();
+            }
+        </script>
+    </body>
+</html>
