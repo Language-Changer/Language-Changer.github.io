@@ -11,7 +11,7 @@
             }
         </style>
     </head>
-    <body style="background:#EEEEEE;">
+    <body style="background:#EFEFEF;">
         <header>
             <center>
                 <div class="timee">
@@ -33,6 +33,12 @@
                 </div>
             </center>
         </nav>
+        <section style="display: none;" id="New_Year">
+            <center>
+                <p>今天是元旦</p>
+                <p>新的一年是不是该做点计划?</p>
+            </center>
+        </section>
         <footer style="background:#AAAAAA;font-size:1px;">
             <center>
                 <p>我的<a href="https://github.com/Language-Changer/">主页</a></p>
@@ -65,9 +71,9 @@
                 document.getElementById("date+").innerHTML="今天是"+year+"年的第"+much_date(year,month,date)+"天";
                 document.getElementById("date-").innerHTML="还有"+much_date_else(year,month,date)+"天会来到新的一年";
                 //second
-                document.getElementById("second").innerHTML="不出意外的话现在是"+year+"年的第"+much_second(year,month,date,hour,minute,second)+"秒了";
+                document.getElementById("second").innerHTML="不出意外的话现在是"+year+"年的第"+much_second(year,month,date,hour,minute,second)+"秒";
                 setTimeout(show_time,1000);//定时器一直调用show()函数
-                return "";
+                return 0;
             }
             function leap_year(when)
             {
@@ -95,6 +101,14 @@
                 var ans = much_date(y,mo,d) * 86400;
                 ans += 3600 * h + 60 * m + s;
                 return ans;
+            }
+            function New_Year()
+            {
+                var now = new Date();
+                if(!(now.getMonth()) && now.getDate() == 1)
+                {
+                    document.getElementById("New_Year").style.display = block;
+                }
             }
         </script>
     </body>
