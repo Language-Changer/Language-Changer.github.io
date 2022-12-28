@@ -1,58 +1,100 @@
 <!DOCTYPE html>
-<html lang="CN-zh">
+<html lang="zh-CN">
     <head>
-        <title>计数器</title>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="html.css" />
-    </head>
-    <body>
-        <center>
-            <h1 id="demo">&nbsp;</h1>
-            <hr>
-            <button onclick="show()">here!</button>
-            <br>
-            <button onclick="showall()">Finish!</button>
-            <button onclick="re()">Reset!</button>
-        </center>
-        <!--
-        <div class="material-symbols-outlined">
-            <span class="delete">delete</span>
-            <span class="htmll">html</span>
-        </div>
+        <title></title>
         <style>
-            .delete {
-              font-variation-settings:
-              'FILL' 1,
-              'wght' 400,
-              'GRAD' 0,
-              'opsz' 48
+            footer{
+                position : absolute;
+                bottom : 0;
+                width : 100%;
             }
-            .htmll {
-                font-variation-settings:
-                'FILL' 0,
-                'wght' 400,
-                'GRAD' 0,
-                'opsz' 48
-            }
-        </style>-->
-        <!--<hr>
-        <iframe src="./h.html" frameborder="0" style="height: 500px;width: 100%;"></iframe>-->
+        </style>
+    </head>
+    <body style="background:#EEEEEE;">
+        <header>
+            <center>
+                <div class="timee">
+                    <h1>当前时间是</h1>
+                    <p id="ttimee"></p>
+                    <p>请珍惜你的时间</p>
+                    <hr>
+                </div>
+            </center>
+        </header>
+        <nav>
+            <center>
+                <div class="timee">
+                    <p id="date+"></p>
+                    <p id="date-"></p>
+                </div>
+                <div class="timee">
+                    <p id="second"></p>
+                </div>
+            </center>
+        </nav>
+        <footer style="background:#AAAAAA;">
+            <center>
+                <p>我的<a href="https://github.com/Language-Changer/">主页</a></p>
+                <p>
+                    <a href="https://jwy2008.github.io/">帮朋友宣传一下</a>
+                    &nbsp;@
+                    <a href="https://github.com/jwy2008/">jwy2008</a>
+                </p>
+                <p>
+                    <s>你可以去那浪费时间</s>
+                </p>
+            </center>
+        </footer>
         <script>
-            var i=0;
-            function show()
+            show_time()
+            function show_time()
             {
-                i += 1;
-                console.log("Hello world! * ",i);
+                //time
+                var days = ["一","二","三","四","五","六","天"];
+                var now = new Date();
+                var year = now.getFullYear();
+                var month = now.getMonth()+1;
+                var date = now.getDate();
+                var day = "星期" + days[now.getDay()-1];
+                var hour = now.getHours();
+                var minute = now.getMinutes();
+                var second = now.getSeconds();
+                document.getElementById("ttimee").innerHTML=year+"年"+month+"月"+date+"日  "+hour+"时"+minute+"分"+second+"秒"+"  "+day;
+                //date
+                document.getElementById("date+").innerHTML="今天是"+year+"年的第"+much_date(year,month,date)+"天";
+                document.getElementById("date-").innerHTML="还有"+much_date_else(year,month,date)+"天会来到新的一年";
+                //second
+                document.getElementById("second").innerHTML="不出意外的话现在是"+year+"年的第"+much_second(year,month,date,hour,minute,second)+"秒了";
+                setTimeout(show_time,1000);//定时器一直调用show()函数
+                return "";
             }
-
-            function showall()
+            function leap_year(when)
             {
-                document.getElementById("demo").innerHTML = i;
+                if((!(when % 4) & when % 100) || !(when % 400))
+                {
+                    return 1;
+                }
+                else return 0;
             }
-
-            function re()
+            function much_date(y,mo,d)
             {
-                location.reload();
+                //虽然我知道dates[12]没用,但我仍然把他写了上去,毕竟一家人要团团圆圆的.
+                var dates = [0,31,59,90,120,151,181,212,243,273,304,334,365];
+                var ans = dates[mo-1] + d;
+                if(mo > 2) ans += leap_year(y);
+                else if(mo == 2 && d == 29) ans += 1;
+                return ans;
+            }
+            function much_date_else(y,mo,d)
+            {
+                return 365+leap_year(y) - much_date(y,mo,d);
+            }
+            function much_second(y,mo,d,h,m,s)
+            {
+                var ans = much_date(y,mo,d) * 86400;
+                ans += 3600 * h + 60 * m + s;
+                return ans;
             }
         </script>
     </body>
