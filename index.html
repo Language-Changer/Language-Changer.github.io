@@ -110,7 +110,7 @@
             }
             function much_second(y,mo,d,h,m,s)
             {
-                var ans = much_date(y,mo,d) * 86400;
+                var ans = (much_date(y,mo,d)-1) * 86400;
                 ans += 3600 * h + 60 * m + s;
                 return ans;
             }
