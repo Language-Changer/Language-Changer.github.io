@@ -79,7 +79,7 @@
                 document.getElementById("ttimee").innerHTML=year+"年"+month+"月"+date+"日  "+hour+"时"+minute+"分"+second+"秒"+"  "+day;
                 //date
                 document.getElementById("date+").innerHTML="今天是"+year+"年的第"+much_date(year,month,date)+"天";
-                document.getElementById("date-").innerHTML="还有"+much_date_else(year,month,date)+"天会来到新的一年";
+                document.getElementById("date-").innerHTML="还有不到"+(much_date_else(year,month,date)+1)+"天会来到新的一年";
                 //second
                 document.getElementById("second+").innerHTML="准确来说的话是"+year+"年的第"+much_second(year,month,date,hour,minute,second)+"秒";
                 document.getElementById("second-").innerHTML="对,"+year+"年还剩"+much_second_else(year,month,date,hour,minute,second)+"秒";
