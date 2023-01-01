@@ -36,7 +36,7 @@
                 </div>
             </center>
         </nav>
-        <hr>
+        <!--hr>
         <div id="help" style="outline-style:double;display:block">
             <center>
                 <h3>在线求援</h3>
@@ -46,7 +46,7 @@
                 </div>
                 <button onclick='document.getElementById("help").style.display = "none";'>隐藏</button>
             </center>
-        </div>
+        </div-->
         <footer style="background:#AAAAAA;font-size:5px;">
             <center>
                 <p style="color:#AAAAAA;">我的<a href="https://github.com/Language-Changer/" style="color:#AAAAAA;">主页</a></p>
@@ -67,12 +67,12 @@
             function show_time()
             {
                 //time
-                var days = ["一","二","三","四","五","六","天"];
+                var days = ["天","一","二","三","四","五","六"];
                 var now = new Date();
                 var year = now.getFullYear();
                 var month = now.getMonth()+1;
                 var date = now.getDate();
-                var day = "星期" + days[now.getDay()-1];
+                var day = "星期" + days[now.getDay()];
                 var hour = now.getHours();
                 var minute = now.getMinutes();
                 var second = now.getSeconds();
