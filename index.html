@@ -1,113 +1,69 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" style="cursor:none;">
     <head>
-        <meta charset="utf-8">
-        <title>听说你有很多时间</title>
-        <link href="./icon.jpg" rel="icon">
-        <style>
-            footer{
-                position : absolute;
-                bottom : 0;
-                width : 100%;
-            }
-        </style>
+        <meta charset="utf-8" />
+        <title>不要刷新</title>
+        <link rel="stylesheet" href="refresh.css" />
+        <link rel="stylesheet" href="load.css" />
     </head>
-    <body style="background:#EFEFEF;">
-        <header>
+    <body>
+        <div>
             <center>
-                <div class="timee">
-                    <h1>当前时间是</h1>
-                    <p id="ttimee"></p>
-                    <p>请珍惜你的时间</p>
-                    <a style="font-size: 5px;" href="./匆匆.html"><s>当然你也可以选择看一遍《匆匆》</s></a>
-                    <hr>
+                <h1>告诉你一个小秘密</h1>
+                <span id="waiting">请</span>
+                <button onclick="show()" id="button">点击查看</button>
+                <div id="result" style="display: none;">
+                    你被骗了
+                    <br />
+                    <div>
+                        <!--video id="videoPlayer" src="." width="400" height="300" ontimeupdate="progressUpdate()">
+                        </video>
+                        <div id="durationBar">
+                            <div id="positionBar"><span id="displayStatus">0秒</span></div>
+                        </div>
+                    
+                        <button onclick="play()">播放</button>
+                        <button onclick="pause()">暂停</button>
+                        <button onclick="stop()">停止</button>
+                        &nbsp;&nbsp;
+                        <button onclick="speedUp()">快放</button>
+                        <button onclick="slowDown()">慢放</button>
+                        <button onclick="normalSpeed()">正常</button>
+                    </div-->
+                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley">
+                        https://www.bilibili.com/video/BV1VL4y1M7PZ/
+                    </a>
+                    <br />
+                    (给你了个很明显的方式让你看到)
                 </div>
             </center>
-        </header>
-        <nav>
-            <center>
-                <div class="timee">
-                    <p id="date+"></p>
-                    <p id="second+"></p>
-                </div>
-                <div class="timee">
-                    <p id="date-"></p>
-                    <p id="second-"></p>
-                </div>
-            </center>
-        </nav>
-        <footer style="background:#AAAAAA;font-size:5px;">
-            <center>
-                <p style="color:#AAAAAA;">我的<a href="https://github.com/Language-Changer/" style="color:#AAAAAA;">主页</a></p>
-                <p>《<a href="./news/" target="_blank">某某日报</a>》</p>
-                <p>
-                    <a href="https://jwy2008.github.io/">帮朋友宣传一下</a>
-                    &nbsp;
-                    <i>@</i>
-                    <a href="https://github.com/jwy2008/">jwy2008</a>
-                </p>
-                <p>
-                    <s>你可以去那浪费时间</s>
-                </p>
-            </center>
-        </footer>
-        <script>
-            show_time()
-            function show_time()
+        </div>
+        <div class="refresh icon" id="iconn" onclick="down('iconn')" title="刷新"></div>
+        <!--导入跟随js-->
+        <script src="followed.js" type="text/javascript"></script>
+        <!--导入视频js-->
+        <script src="playvideo.js" type="text/javascript"></script>
+        <!--导入随机数js-->
+        <script src="myrandom.js" type="text/javascript"></script>
+        <!--自动跟随-->
+        <script type="text/javascript">running("iconn")</script>
+        <!--显示"秘密"-->
+        <script type="text/javascript">
+            function show(t)
             {
-                //time
-                var days = ["天","一","二","三","四","五","六"];
-                var now = new Date();
-                var year = now.getFullYear();
-                var month = now.getMonth()+1;
-                var date = now.getDate();
-                var day = "星期" + days[now.getDay()];
-                var hour = now.getHours();
-                var minute = now.getMinutes();
-                var second = now.getSeconds();
-                document.getElementById("ttimee").innerHTML=year+"年"+month+"月"+date+"日  "+hour+"时"+minute+"分"+second+"秒"+"  "+day;
-                //date
-                document.getElementById("date+").innerHTML="今天是"+year+"年的第"+much_date(year,month,date)+"天";
-                document.getElementById("date-").innerHTML="还有不到"+(much_date_else(year,month,date)+1)+"天会来到新的一年";
-                //second
-                document.getElementById("second+").innerHTML="准确来说的话是"+year+"年的第"+much_second(year,month,date,hour,minute,second)+"秒";
-                document.getElementById("second-").innerHTML="对,"+year+"年还剩"+much_second_else(year,month,date,hour,minute,second)+"秒";
-                //保持刷新
-                setTimeout(show_time,1000);
-                return 0;
+                document.getElementById("button").style.display = 'none';
+                document.getElementById("waiting").style.display = 'none';
+                document.getElementById("result").style.display = 'block';
             }
-            function leap_year(when)
+        </script>
+        <!--刷新-->
+        <script type="text/javascript">
+            function down(ob)
             {
-                if((!(when % 4) & when % 100) || !(when % 400))
-                {
-                    return 1;
+                var oDiv = document.getElementById(ob);
+                oDiv.onclick = function(){
+                    location.reload();//重载
                 }
-                else return 0;
-            }
-            function much_date(y,mo,d)
-            {
-                //虽然我知道dates[12]没用,但我仍然把他写了上去,毕竟一家人要团团圆圆的.
-                var dates = [0,31,59,90,120,151,181,212,243,273,304,334,365];
-                var ans = dates[mo-1] + d;
-                if(mo > 2) ans += leap_year(y);
-                else if(mo == 2 && d == 29) ans += 1;
-                return ans;
-            }
-            function much_date_else(y,mo,d)
-            {
-                return 365+leap_year(y) - much_date(y,mo,d);
-            }
-            function much_second(y,mo,d,h,m,s)
-            {
-                var ans = (much_date(y,mo,d)-1) * 86400;
-                ans += 3600 * h + 60 * m + s;
-                return ans;
-            }
-            function much_second_else(y,mo,d,h,m,s)
-            {
-                var ans = 365 * 86400 + leap_year(y) * 86400;
-                ans -= much_second(y,mo,d,h,m,s);
-                return ans;
             }
         </script>
     </body>
