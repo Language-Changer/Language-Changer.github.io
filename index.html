@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8" />
+        <title id="ti">积攒功德</title>
+        <link rel="stylesheet" href="./sheet.css" type="text/css" />
+        <style>
+            footer{
+                position : absolute;
+                bottom : 0;
+                width : 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <center>
+            <h1 id="ob">当前功德</h1>
+            <p id="num"></p>
+            <br />
+            <br />
+            <br />
+            <img src="./fish.png" alt="这里原本一张木鱼图片" onclick="down()" id="fish" />
+            <p id="tip" class="tips" style="display: none;">+1</p>
+        </center>
+        <footer>
+            <center>
+                <input id="objects" maxlength="10" />
+                <button onclick="change()">确定</button>
+            </center>
+        </footer>
+        <script>
+            var all_num = 0;
+            document.getElementById("num").innerHTML = all_num;
+            
+            function down()
+            {
+                all_num++;
+                document.getElementById("num").innerHTML = all_num;
+            }
+
+            function change()
+            {
+                var v=document.getElementById("objects").value;
+                document.getElementById("ob").innerHTML = "当前"+v;
+                document.getElementById("tip").innerHTML = v+"+1";
+            }
+        </script>
+    </body>
+</html>
