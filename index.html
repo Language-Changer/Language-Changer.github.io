@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8" />
+        <title>Yi&nbsp;Zhou</title>
+        <link rel="ico" href="./icon.jpg" />
+        <link rel="stylesheet" href="./sheet.css" />
+        <link rel="stylesheet" href="./classes.css" />
+    </head>
+    <body>
+        <div class="main">
+            <h1>你好, 朋友</h1>
+            <p id="time">现在就是当下</p>
+            <div class="fork">
+                <p>你可以在这里找到我</p>
+                <lu>
+                    <li>
+                        <a title="Luogu" href="https://www.luogu.com.cn/user/910116" target="_blank">
+                            <img class="icon" src="https://cdn.luogu.com.cn/fe/logo.png?0fdd294ff62e331d2f70e1a37ba4ee02"></img>
+                            洛谷
+                        </a>
+                    </li>
+                    <li>
+                        <a title="Github" href="https://github.com/Language-Changer" target="_blank">
+                            <img class="icon" src="https://avatars.githubusercontent.com/u/121141095?v=4"></img>
+                            Github
+                        </a>
+                    </li>
+                </lu>
+            </div>
+        </div>
+        <script>
+        show_time();
+        function show_time()
+        {
+            //time
+            var days = ["天","一","二","三","四","五","六"];
+            var now = new Date();
+            var year = now.getFullYear();
+            var month = now.getMonth()+1;
+            var date = now.getDate();
+            var day = "星期" + days[now.getDay()];
+            var hour = now.getHours();
+            var minute = now.getMinutes();
+            document.getElementById("time").innerHTML="现在是 "+year+"年"+month+"月"+date+"日  "+hour+"时"+minute+"分"+"  "+day+"。";
+            //保持刷新
+            setTimeout(show_time,1500);
+            return 0;
+        }
+        </script>
+    </body>
+</html>

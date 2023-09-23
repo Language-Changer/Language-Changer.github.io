@@ -1,0 +1,23 @@
+body {
+    background-color: #EEEEEE;
+}
+
+a {
+    text-decoration: none;
+    transition: color 500ms 0s;
+}
+
+a:link {
+    color: #000000;
+    text-align: left;
+    
+}
+
+a:visited {
+    color: #000000;
+    text-align: left;
+}
+
+a:hover {
+    color: #990033
+}

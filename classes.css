@@ -1,0 +1,18 @@
+.main {
+    position: absolute;
+    left: 20%;
+    top: 10%;
+    background-color: #EEEEEE;
+    width: 60%;
+    height: 80%;
+}
+
+.fork {
+    position: relative;
+    left: 5%;
+}
+
+.icon {
+    height: 15px;
+    width: auto;
+}
