@@ -1,3 +1,13 @@
+@font-face {
+    font-family: 'MaShanZheng-Regular';
+    src:url(./fonts/MaShanZheng-Regular.ttf);
+}
+
+html {
+    font-size: 25px;
+    font-family: 'MaShanZheng-Regular';
+}
+
 .main {
     position: absolute;
     left: 20%;
