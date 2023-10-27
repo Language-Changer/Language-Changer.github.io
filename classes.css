@@ -5,7 +5,13 @@
 
 html {
     font-size: 25px;
-    font-family: 'MaShanZheng-Regular';
+    font-family: '';
+}
+
+footer{
+    position : absolute;
+    bottom : 0;
+    width : 100%;
 }
 
 .main {
