@@ -3,18 +3,6 @@
     src:url(./fonts/MaShanZheng-Regular.ttf);
 }
 
-html {
-    font-size: 25px;
-    font-family: '';
-}
-
-footer {
-    position : absolute;
-    bottom : 0;
-    width : 100%;
-    font-size: 15px;
-}
-
 .main {
     position: absolute;
     left: 20%;
