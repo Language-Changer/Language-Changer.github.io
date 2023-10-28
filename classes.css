@@ -1,23 +1,31 @@
-@font-face {
-    font-family: 'MaShanZheng-Regular';
-    src:url(./fonts/MaShanZheng-Regular.ttf);
-}
-
-.main {
-    position: absolute;
-    left: 20%;
-    top: 10%;
-    background-color: #EEEEEE;
-    width: 60%;
-    height: 80%;
-}
-
-.fork {
-    position: relative;
-    left: 5%;
-}
-
 .icon {
     height: 15px;
     width: auto;
+}
+
+footer {
+    position : absolute;
+    bottom : 0;
+    width : 100%;
+    font-size: 15px;
+}
+
+a {
+    text-decoration: none;
+    transition: color 500ms 0s;
+}
+
+a:link {
+    color: #EEEEEE;
+    text-align: left;
+    
+}
+
+a:visited {
+    color: #EEEEEE;
+    text-align: left;
+}
+
+a:hover {
+    color: #990033
 }

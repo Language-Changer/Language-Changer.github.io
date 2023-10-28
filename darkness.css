@@ -1,0 +1,144 @@
+body {
+    font-family: Segoe UI Light;
+    letter-spacing: 0.02em;
+    background-color: #181818;
+    color: #F0F0F0;
+    margin-left: 5.5em;
+}
+
+h1 {
+    color: #11D8E8;
+    font-size: 42pt;
+}
+
+h2 {
+    font-size: 15pt;
+    color: #11EEF4;
+    margin-top: 4em;
+    margin-bottom: 0em;
+    letter-spacing: 0.08em;
+}
+
+td {
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+}
+
+.nobatts {
+    font-family: Segoe UI Semibold;
+    background: #272727;
+    color: #ACAC60;
+    font-size: 13pt;
+    padding-left:0.4em;
+    padding-right:0.4em;
+    padding-top:0.3em;
+    padding-bottom:0.3em;
+}
+
+.explanation {
+    color: #777777;
+    font-size: 12pt;
+    margin-bottom: 1em;
+}
+
+.explanation2 {
+    color: #777777;
+    font-size: 12pt;
+    margin-bottom: 0.1em;
+}
+
+table {
+    border-width: 0;
+    table-layout: fixed;
+    font-family: Segoe UI Light;
+    letter-spacing: 0.02em;
+    background-color: #181818;
+    color: #f0f0f0;
+}
+
+.even { background: #272727; }
+
+.odd { background: #1E1E1E; }
+
+.even.suspend { background: #1A1A28; }
+
+.odd.suspend { background: #1A1A2C; }
+
+thead {
+    font-family: Segoe UI Semibold;
+    font-size: 85%;
+    color: #BCBCBC;
+}
+
+text {
+    font-size: 12pt;
+    font-family: Segoe UI Light;
+    fill: #11EEF4;
+}
+
+.centered { text-align: center; }
+
+.label {
+    font-family: Segoe UI Semibold;
+    font-size: 85%;
+    color: #BCBCBC;
+}
+
+.dc.even { background: #40182C; }
+
+.dc.odd { background: #30141F; }
+
+td.colBreak {
+    padding: 0;
+    width: 0.15em;
+}
+
+td.state { text-align: center; }
+
+td.hms {
+    font-family: Segoe UI Symbol;
+    text-align: right;
+    padding-right: 3.4em;
+}
+
+td.dateTime { font-family: Segoe UI Symbol; }
+
+td.nullValue { text-align: center; }
+
+td.percent {
+    font-family: Segoe UI Symbol;
+    text-align: right;
+    padding-right: 2.5em;
+
+}
+
+col:first-child { width: 13em; }
+
+col.col2 { width: 10.4em; }
+
+col.percent { width: 7.5em; }
+
+td.mw {
+    text-align: right;
+    padding-right: 2.5em;
+}
+
+td.acdc { text-align: center; }
+
+span.date {
+    display: inline-block;
+    width: 5.5em;
+}
+
+span.time {
+    text-align: right;
+    width: 4.2em;
+    display: inline-block;
+}
+
+text { font-family: Segoe UI Symbol; }
+
+.noncontigbreak {
+    height: 0.3em;
+    background-color: #1A1A28;
+}
