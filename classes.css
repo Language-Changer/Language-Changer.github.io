@@ -9,23 +9,3 @@ footer {
     width : 100%;
     font-size: 15px;
 }
-
-a {
-    text-decoration: none;
-    transition: color 500ms 0s;
-}
-
-a:link {
-    color: #EEEEEE;
-    text-align: left;
-    
-}
-
-a:visited {
-    color: #EEEEEE;
-    text-align: left;
-}
-
-a:hover {
-    color: #990033
-}
