@@ -1,5 +1,14 @@
-body {
+html, body {
     background-color: #EEEEEE;
+    font-size: 25px;
+    font-family: '';
+}
+
+footer {
+    position : absolute;
+    bottom : 0;
+    width : 100%;
+    font-size: 15px;
 }
 
 a {
