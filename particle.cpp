@@ -3,7 +3,7 @@ using namespace std;
 
 int tar[5];
 
-bool dfs(int a, int b, int c, int type, int depth)
+bool dfs(int a, int b, int c, int depth)
 {
     // Test
     // cerr << a << ' ' << b << ' ' << c << ' ' << type << ' ' << depth << endl;
@@ -11,8 +11,6 @@ bool dfs(int a, int b, int c, int type, int depth)
     // Out of limit
     if (a < 0 || b < 0 || c < 0) return 0;
     if (depth > (tar[1]+tar[2]+tar[3])) return 0;
-    // if (type == 1 && (a > tar[1] || b > tar[2] || c > tar[3])) return 0;
-    // if (type == 3 && b + 1 > tar[2]) return 0;
 
     // True way
     if (a == tar[1] && b == tar[2] && c == tar[3])
@@ -22,32 +20,32 @@ bool dfs(int a, int b, int c, int type, int depth)
     }
 
     // DFS
-    if (dfs(a-1, b+1, c+1, 1, depth+1))
+    if (dfs(a-1,b+1,c+1,depth+1))
     {
         cout << "B and C becomes A;" << endl;
         return 1;
     }
-    else if(dfs(a+1,b+1,c-1, 1,depth+1))
+    else if(dfs(a+1,b+1,c-1,depth+1))
     {
         cout << "A and B becomes C;" << endl;
         return 1;
     }
-    else if(dfs(a+1,b-1,c+1, 1,depth+1))
+    else if(dfs(a+1,b-1,c+1,depth+1))
     {
         cout << "A and C becomes B;" << endl;
         return 1;
     }
-    else if(dfs(a+2,b-1,c, 2,depth+1))
+    else if(dfs(a+2,b-1,c,depth+1))
     {
         cout << "A and A becomes B;" << endl;
         return 1;
     }
-    else if(dfs(a,b+1,c, 3,depth+1))
+    else if(dfs(a,b+1,c,depth+1))
     {
         cout << "B and B becomes B;" << endl;
         return 1;
     }
-    else if(dfs(a,b-1,c+2, 2,depth+1))
+    else if(dfs(a,b-1,c+2,depth+1))
     {
         cout << "C and C becomes B;" << endl;
         return 1;
@@ -60,6 +58,6 @@ int main()
     for (int i=1;i <= 3;i++) cin >> tar[i];
     int rem;
     cin >> rem;
-    if (!dfs(1*(rem==1), 1*(rem==2), 1*(rem==3), 0, 1)) cout << "None!" << endl;
+    if (!dfs(1*(rem==1), 1*(rem==2), 1*(rem==3), 1)) cout << "None!" << endl;
     return 0;
 }
