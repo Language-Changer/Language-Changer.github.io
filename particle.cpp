@@ -6,11 +6,11 @@ int tar[5];
 bool dfs(int a, int b, int c, int depth)
 {
     // Test
-    // cerr << a << ' ' << b << ' ' << c << ' ' << type << ' ' << depth << endl;
+    // cerr << a << ' ' << b << ' ' << c << ' ' << depth << endl;
 
     // Out of limit
     if (a < 0 || b < 0 || c < 0) return 0;
-    if (depth > (tar[1]+tar[2]+tar[3])) return 0;
+    if (depth > tar[1]+tar[2]+tar[3]) return 0;
 
     // True way
     if (a == tar[1] && b == tar[2] && c == tar[3])
